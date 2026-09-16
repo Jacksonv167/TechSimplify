@@ -1,0 +1,606 @@
+/* =========================
+   GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #172033;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    display: inline-block;
+    position: relative;
+    z-index: 1001;
+    font-size: 15px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #2563eb;
+}
+
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-button {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    color: #172033;
+    position: relative;
+    z-index: 1002;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+#mobileMenu {
+    display: none;
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: 230px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    z-index: 2000;
+}
+
+#mobileMenu.active {
+    display: flex;
+    flex-direction: column;
+}
+
+#mobileMenu a {
+    display: block;
+    padding: 13px 10px;
+    border-bottom: 1px solid #eeeeee;
+    color: #172033;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#mobileMenu a:hover {
+    color: #2563eb;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 80px 7%;
+    background: linear-gradient(
+        135deg,
+        #eff6ff 0%,
+        #ffffff 55%,
+        #f8fafc 100%
+    );
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.small-title {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.08;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.hero h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.hero-text {
+    max-width: 620px;
+    font-size: 19px;
+    color: #667085;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    background: white;
+}
+
+.secondary-button:hover {
+    background: #eff6ff;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.categories,
+.articles,
+.technology-section,
+.how-to-section,
+.reviews-section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-heading > p:first-child {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.section-heading p:last-child {
+    color: #667085;
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.category-card {
+    padding: 35px;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    background: white;
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.category-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    color: #667085;
+    margin-bottom: 20px;
+}
+
+.category-card a {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+
+/* =========================
+   ARTICLES
+========================= */
+
+.articles {
+    background: #f8fafc;
+}
+
+.article-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.article-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.article-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    font-size: 60px;
+}
+
+.article-content {
+    padding: 25px;
+}
+
+.article-category {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-content h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 10px 0;
+}
+
+.article-content p {
+    color: #667085;
+    margin-bottom: 18px;
+}
+
+.article-content a {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+
+/* =========================
+   AI SECTION
+========================= */
+
+.info-section {
+    padding: 100px 7%;
+    background: #172033;
+    color: white;
+}
+
+.info-section > div {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.info-section .small-title {
+    color: #60a5fa;
+}
+
+.info-section h2 {
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+
+.info-section p:not(.small-title) {
+    color: #d1d5db;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   TECHNOLOGY
+========================= */
+
+.technology-list {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.technology-list > div {
+    padding: 30px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 38px;
+    transition: 0.3s;
+}
+
+.technology-list > div:hover {
+    transform: translateY(-5px);
+    border-color: #2563eb;
+}
+
+.technology-list strong {
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.technology-list p {
+    font-size: 14px;
+    color: #667085;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   HOW-TO
+========================= */
+
+.how-to-section {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-section {
+    background: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 60px 7% 30px;
+    background: #111827;
+    color: white;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.footer > p {
+    color: #9ca3af;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+  .menu-button {
+    display: block;
+}
+
+    .hero {
+        padding: 70px 5%;
+    }
+
+    .categories,
+    .articles,
+    .technology-section,
+    .how-to-section,
+    .reviews-section {
+        padding: 70px 5%;
+    }
+
+    .category-grid,
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technology-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .info-section h2 {
+        font-size: 34px;
+    }
+
+    .technology-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        text-align: center;
+    }
+
+}
