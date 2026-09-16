@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techsimplify.com/sitemap.xml
+Sitemap: https://techsimplify.net/sitemap.xml
